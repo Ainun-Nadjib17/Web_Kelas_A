@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TugasKelas — Dashboard Tugas Kelas</title>
+  <link rel="stylesheet" href="assets/css/style.css?v=4" />
+  <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css?v=4" />
+</head>
+<body>
+  <header id="app-header"></header>
+
+  <main class="container">
+    <!-- Hero -->
+    <section class="page-head">
+      <h1 id="hero-title">Dashboard Tugas Kelas</h1>
+      <p>Pusat informasi tugas mata kuliah — tanpa perlu login, tanpa perlu tanya PJ.</p>
+    </section>
+
+    <!-- Statistik ringkas -->
+    <section class="grid grid-4" id="stats-row">
+      <div class="card stat-card">
+        <span class="stat-icon"><i class="fa-solid fa-book-open"></i></span>
+        <span class="stat-value" id="stat-matkul">–</span>
+        <span class="stat-label">Mata Kuliah Aktif</span>
+      </div>
+      <div class="card stat-card">
+        <span class="stat-icon"><i class="fa-solid fa-user-tie"></i></span>
+        <span class="stat-value" id="stat-pj">–</span>
+        <span class="stat-label">PJ Aktif</span>
+      </div>
+      <div class="card stat-card">
+        <span class="stat-icon"><i class="fa-solid fa-clipboard-list"></i></span>
+        <span class="stat-value" id="stat-tugas">–</span>
+        <span class="stat-label">Total Tugas Aktif</span>
+      </div>
+      <div class="card stat-card">
+        <span class="stat-icon"><i class="fa-solid fa-hourglass-half"></i></span>
+        <span class="stat-value" id="stat-deadline">–</span>
+        <span class="stat-label">Deadline ≤ 3 Hari</span>
+      </div>
+    </section>
+
+    <!-- Deadline terdekat -->
+    <section>
+      <div class="section-title">
+        <h2><i class="fa-solid fa-fire"></i> Deadline Terdekat</h2>
+      </div>
+      <div class="grid grid-3" id="upcoming-list"></div>
+    </section>
+
+    <!-- Mata kuliah -->
+    <section>
+      <div class="section-title">
+        <h2><i class="fa-solid fa-book"></i> Mata Kuliah</h2>
+      </div>
+      <div class="grid grid-3" id="matkul-list"></div>
+    </section>
+
+    <!-- Semua tugas + search & filter -->
+    <section>
+      <div class="section-title">
+        <h2><i class="fa-solid fa-clipboard-list"></i> Semua Tugas</h2>
+      </div>
+      <div class="toolbar">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" class="input" placeholder="Cari judul tugas..." />
+        </div>
+        <select id="filter-matkul" class="input">
+          <option value="">Semua Mata Kuliah</option>
+        </select>
+        <select id="filter-status" class="input">
+          <option value="">Semua Status</option>
+          <option value="late">Terlambat / Hari Ini</option>
+          <option value="soon">≤ 3 Hari lagi</option>
+          <option value="safe">&gt; 3 Hari lagi</option>
+        </select>
+      </div>
+      <div class="grid grid-3" id="tasks-list"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    TugasKelas — Manajemen Tugas Kelas · Dibangun dengan Vanilla JS + Supabase
+  </footer>
+
+  <script src="assets/vendor/supabase.js?v=8"></script>
+  <script src="assets/js/config.js?v=8"></script>
+  <script src="assets/js/supabase-client.js?v=8"></script>
+  <script src="assets/js/utils.js?v=8"></script>
+  <script src="assets/js/ui.js?v=8"></script>
+  <script src="assets/js/public.js?v=8"></script>
+</body>
+</html>

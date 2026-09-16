@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel PJ — TugasKelas</title>
+  <link rel="stylesheet" href="assets/css/style.css?v=4" />
+  <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css?v=4" />
+</head>
+<body>
+  <header id="app-header"></header>
+
+  <main class="container">
+    <section class="page-head">
+      <h1><i class="fa-solid fa-clipboard-list"></i> Panel PJ</h1>
+      <p>Kelola tugas untuk mata kuliah yang kamu ampu.</p>
+    </section>
+
+    <!-- Profil PJ -->
+    <div class="card mb-2" id="pj-profile-card" style="max-width: 720px;">
+      <div class="flex-between">
+        <div>
+          <strong id="pj-name">Memuat…</strong>
+          <div class="text-muted text-sm" id="pj-username"></div>
+        </div>
+        <span class="badge badge-primary" id="pj-matkul-count">0 matkul</span>
+      </div>
+    </div>
+
+    <!-- Pilih matkul -->
+    <div class="form-group" style="max-width: 420px;">
+      <label>Mata Kuliah yang Diampu</label>
+      <select id="select-matkul" class="input">
+        <option value="">Memuat…</option>
+      </select>
+    </div>
+
+    <!-- Toolbar tugas -->
+    <div class="flex-between mb-2">
+      <h2>Tugas — <span id="label-matkul" class="text-muted">—</span></h2>
+      <button class="btn btn-primary" id="btn-add-task" disabled>
+        <i class="fa-solid fa-plus"></i> Tambah Tugas
+      </button>
+    </div>
+    <div class="toolbar">
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="search-input" class="input" placeholder="Cari tugas..." />
+      </div>
+      <select id="filter-status" class="input">
+        <option value="">Semua Status</option>
+        <option value="active">Aktif</option>
+        <option value="inactive">Nonaktif / Terhapus</option>
+      </select>
+    </div>
+
+    <div class="grid grid-3" id="task-list"></div>
+  </main>
+
+  <script src="assets/vendor/supabase.js?v=8"></script>
+  <script src="assets/js/config.js?v=8"></script>
+  <script src="assets/js/supabase-client.js?v=8"></script>
+  <script src="assets/js/utils.js?v=8"></script>
+  <script src="assets/js/ui.js?v=8"></script>
+  <script src="assets/js/pj.js?v=8"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin — TugasKelas</title>
+  <link rel="stylesheet" href="assets/css/style.css?v=4" />
+  <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css?v=4" />
+</head>
+<body>
+  <header id="app-header"></header>
+
+  <main class="container">
+    <section class="page-head">
+      <h1><i class="fa-solid fa-gauge-high"></i> Dashboard Admin</h1>
+      <p>Kelola mata kuliah, akun PJ, dan pantau aktivitas tugas kelas.</p>
+    </section>
+
+    <!-- Statistik -->
+    <section class="grid grid-4">
+      <div class="card stat-card">
+        <span class="stat-icon"><i class="fa-solid fa-book-open"></i></span>
+        <span class="stat-value" id="stat-matkul">–</span>
+        <span class="stat-label">Mata Kuliah</span>
+      </div>
+      <div class="card stat-card">
+        <span class="stat-icon"><i class="fa-solid fa-user-tie"></i></span>
+        <span class="stat-value" id="stat-pj">–</span>
+        <span class="stat-label">Akun PJ</span>
+      </div>
+      <div class="card stat-card">
+        <span class="stat-icon"><i class="fa-solid fa-clipboard-list"></i></span>
+        <span class="stat-value" id="stat-tugas">–</span>
+        <span class="stat-label">Total Tugas</span>
+      </div>
+      <div class="card stat-card">
+        <span class="stat-icon"><i class="fa-solid fa-hourglass-half"></i></span>
+        <span class="stat-value" id="stat-aktif">–</span>
+        <span class="stat-label">Tugas Aktif</span>
+      </div>
+    </section>
+
+    <!-- Tabs -->
+    <div class="tabs mt-3">
+      <button class="tab-btn active" data-tab="tab-matkul"><i class="fa-solid fa-book"></i> Mata Kuliah</button>
+      <button class="tab-btn" data-tab="tab-pj"><i class="fa-solid fa-users"></i> Akun PJ</button>
+    </div>
+
+    <!-- Tab: Mata Kuliah -->
+    <section id="tab-matkul" class="tab-pane active">
+      <div class="flex-between mb-2">
+        <h2>Daftar Mata Kuliah</h2>
+        <button class="btn btn-primary" id="btn-add-matkul">
+          <i class="fa-solid fa-plus"></i> Tambah Matkul
+        </button>
+      </div>
+      <div class="table-wrap">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Kode</th><th>Nama</th><th>PJ</th><th>Tugas</th><th>Status</th><th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="matkul-tbody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Tab: Akun PJ -->
+    <section id="tab-pj" class="tab-pane">
+      <div class="flex-between mb-2">
+        <h2>Daftar Akun</h2>
+        <button class="btn btn-primary" id="btn-add-pj">
+          <i class="fa-solid fa-user-plus"></i> Buat Akun
+        </button>
+      </div>
+      <div class="table-wrap">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Nama</th><th>Username</th><th>Role</th><th>Matkul Diampu</th><th>Status</th><th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="pj-tbody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/vendor/supabase.js?v=8"></script>
+  <script src="assets/js/config.js?v=8"></script>
+  <script src="assets/js/supabase-client.js?v=8"></script>
+  <script src="assets/js/utils.js?v=8"></script>
+  <script src="assets/js/ui.js?v=8"></script>
+  <script src="assets/js/admin.js?v=8"></script>
+</body>
+</html>

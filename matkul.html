@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detail Mata Kuliah — TugasKelas</title>
+  <link rel="stylesheet" href="assets/css/style.css?v=4" />
+  <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css?v=4" />
+</head>
+<body>
+  <header id="app-header"></header>
+
+  <main class="container">
+    <a href="index.html" class="text-muted text-sm">
+      <i class="fa-solid fa-arrow-left"></i> Kembali ke dashboard
+    </a>
+
+    <section class="page-head mt-2" id="matkul-head">
+      <h1 id="matkul-title">Memuat…</h1>
+      <p id="matkul-sub"></p>
+    </section>
+
+    <div class="card mb-2" id="matkul-info" style="max-width: 720px;">
+      <div class="detail-list">
+        <div class="detail-item">
+          <div class="d-label">Penanggung Jawab</div>
+          <div class="d-value" id="matkul-pj">—</div>
+        </div>
+        <div class="detail-item">
+          <div class="d-label">Deskripsi</div>
+          <div class="d-value" id="matkul-desc">—</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="toolbar">
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="search-input" class="input" placeholder="Cari tugas di matkul ini..." />
+      </div>
+      <select id="filter-status" class="input">
+        <option value="">Semua Status</option>
+        <option value="late">Terlambat / Hari Ini</option>
+        <option value="soon">≤ 3 Hari lagi</option>
+        <option value="safe">&gt; 3 Hari lagi</option>
+      </select>
+    </div>
+
+    <div class="grid grid-3" id="tasks-list"></div>
+  </main>
+
+  <footer class="footer">TugasKelas — Manajemen Tugas Kelas</footer>
+
+  <script src="assets/vendor/supabase.js?v=8"></script>
+  <script src="assets/js/config.js?v=8"></script>
+  <script src="assets/js/supabase-client.js?v=8"></script>
+  <script src="assets/js/utils.js?v=8"></script>
+  <script src="assets/js/ui.js?v=8"></script>
+  <script src="assets/js/matkul.js?v=8"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login — TugasKelas</title>
+  <link rel="stylesheet" href="assets/css/style.css?v=4" />
+  <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css?v=4" />
+</head>
+<body>
+  <header id="app-header"></header>
+
+  <div class="auth-wrap">
+    <div class="card auth-card">
+      <div class="auth-logo"><i class="fa-solid fa-graduation-cap"></i></div>
+      <h1>Masuk Akun</h1>
+      <p class="auth-sub">Untuk PJ Mata Kuliah &amp; Ketua Kelas (Admin)</p>
+
+      <div class="auth-error" id="login-error"></div>
+
+      <form id="login-form">
+        <div class="form-group">
+          <label>Username</label>
+          <input type="text" id="username" class="input" placeholder="misal: admin atau budi" required autocomplete="username" />
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" id="password" class="input" placeholder="••••••••" required autocomplete="current-password" />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" id="btn-login">
+          <i class="fa-solid fa-right-to-bracket"></i> Masuk
+        </button>
+      </form>
+
+      <p class="text-muted text-sm mt-3" style="text-align:center;">
+        Mahasiswa tidak perlu login —
+        <a href="index.html">lihat tugas di sini</a>.
+      </p>
+    </div>
+  </div>
+
+  <script src="assets/vendor/supabase.js?v=8"></script>
+  <script src="assets/js/config.js?v=8"></script>
+  <script src="assets/js/supabase-client.js?v=8"></script>
+  <script src="assets/js/utils.js?v=8"></script>
+  <script src="assets/js/ui.js?v=8"></script>
+  <script src="assets/js/auth.js?v=8"></script>
+</body>
+</html>
