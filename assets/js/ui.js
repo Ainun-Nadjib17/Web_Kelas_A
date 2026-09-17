@@ -70,7 +70,7 @@ function taskCardHTML(task, { getSubjectName = null, showActions = false } = {})
       ${task.description ? `<p class="task-desc">${esc(task.description)}</p>` : ''}
       <div class="task-meta">
         <span class="chip"><i class="fa-solid fa-calendar"></i> ${esc(formatWIB(task.deadline))}</span>
-        ${task.submission_url ? `<span class="chip"><i class="fa-solid fa-link"></i> Link pengumpulan</span>` : ''}
+        ${task.submission_url ? `<a class="chip" href="${esc(task.submission_url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()"><i class="fa-solid fa-link"></i> Link pengumpulan</a>` : ''}
         ${task.material_file_url ? `<span class="chip"><i class="fa-solid fa-file"></i> Materi</span>` : ''}
       </div>
       ${
